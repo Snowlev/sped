@@ -1,0 +1,33 @@
+plr = game.Players.LocalPlayer
+mouse = plr:GetMouse()
+
+key = "z"
+
+toggled = false
+
+lastspeed = nil
+
+speed = 50
+
+mouse.KeyDown:connect(function(k)
+k = k:lower()
+
+if k == key then
+
+       if toggled == false then
+           toggled = true
+           lastspeed = plr.Character.Humanoid.WalkSpeed
+
+           plr.Character.Humanoid.WalkSpeed = speed
+
+          else
+
+       toggled = false
+
+       plr.Character.Humanoid.WalkSpeed = lastspeed
+
+       end
+
+end
+
+end)
